@@ -3,6 +3,7 @@ Spark your wilderness soul: Campfire Connect - Explore, rate, &amp; share advent
 
 
 Campfire Connect: Connect with Wild Adventures ⛺
+
 Campfire Connect is a full-fledged web platform where outdoor enthusiasts can discover, share, and review their favorite camping spots.  Built with a user-centric approach, it features:
 
 Explore Diverse Campgrounds: Browse through a curated database of campsites, complete with stunning visuals, detailed descriptions, and handy amenities lists.
