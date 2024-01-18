@@ -1,0 +1,49 @@
+<% layout('layouts/boilerPlate') %>
+    <div class="mb-3 d-flex justify-content-center align-items-center rounded" style="width:100%">
+        <div id="map" class="">
+            <video style="width: 1000px; height: 100%"
+                src="https://cdn.pixabay.com/vimeo/592491861/tent-86384.mp4?width=960&hash=eac158a6898d05c5213b6ca85a2bf8092c08e40b"
+                autoplay muted loop>
+            </video>
+        </div>
+    </div>
+
+    <h1>All Campgrounds</h1>
+    <div>
+        <a href="/campgrounds/new">Add Campground</a>
+    </div>
+
+    <% for(let campground of campgrounds) {%>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <% if(campground.images.length) { %>
+                        <img crossorigin="anonymous" src="<%= campground.images[0].url %>" alt="" class="img-fluid">
+                        <% } else { %>
+                            <img crossorigin="anonymous"
+                                src="https://images.unsplash.com/photo-1533575770077-052fa2c609fc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="" class="img-fluid">
+                            <% } %>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= campground.title %>
+                        </h5>
+                        <p class="card-text">
+                            <%= campground.description %>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%= campground.location %>
+                            </small>
+                        </p>
+                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">View <%= campground.title
+                                %></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+            <script src="/javascripts/clusterMap.js"></script>
